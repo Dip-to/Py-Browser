@@ -36,9 +36,8 @@ class MainPage(QMainWindow):
         rel.triggered.connect(brow.browser.reload)
         task_bar.addAction(rel)
 
-        # addres
+        # address bar
         brow.add_bar = QLineEdit()
-        # brow.add_bar.setText("http://")
         brow.add_bar.returnPressed.connect(brow.to_Url)
         task_bar.addWidget(brow.add_bar)
 
