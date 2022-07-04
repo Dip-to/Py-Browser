@@ -22,8 +22,9 @@ class MainPage(QMainWindow):
         bck_img = QIcon("icons/arrow-curve-180-left.png")
         next_img = QIcon("icons/arrow-curve.png")
         reload_img = QIcon("icons/arrow-circle-225-left.png")
+        home_img = QIcon("icons/home.png")
 
-        # back next reload
+        # back next reload home
         bck = QAction(bck_img, 'Back', brow)
         bck.triggered.connect(brow.browser.back)
         task_bar.addAction(bck)
@@ -36,9 +37,13 @@ class MainPage(QMainWindow):
         rel.triggered.connect(brow.browser.reload)
         task_bar.addAction(rel)
 
+        # home
+        home_button = QAction(home_img,'Home', brow)
+        home_button.triggered.connect(brow.to_home)
+        task_bar.addAction(home_button)
+
         # address bar
         brow.add_bar = QLineEdit()
-        # brow.add_bar.setText("http://")
         brow.add_bar.returnPressed.connect(brow.to_Url)
         task_bar.addWidget(brow.add_bar)
 
@@ -48,6 +53,9 @@ class MainPage(QMainWindow):
         if "http://" not in url:
             url = "http://" + url
         self.browser.setUrl(QUrl(url))
+
+    def to_home(self):
+        self.browser.setUrl(QUrl("http://google.com"))
 
 
 # app run
