@@ -23,7 +23,7 @@ class MainPage(QMainWindow):
         next_img = QIcon("icons/arrow-curve.png")
         reload_img = QIcon("icons/arrow-circle-225-left.png")
 
-        # back next reload
+        # back next reloa
         bck = QAction(bck_img, 'Back', brow)
         bck.triggered.connect(brow.browser.back)
         task_bar.addAction(bck)
