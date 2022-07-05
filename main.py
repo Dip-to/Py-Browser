@@ -23,6 +23,12 @@ class MainPage(QMainWindow):
         next_img = QIcon("icons/arrow-curve.png")
         reload_img = QIcon("icons/arrow-circle-225-left.png")
         home_img = QIcon("icons/home.png")
+        # bck_img = QIcon("icons/arrow-curve-180-left.png")
+        # next_img = QIcon("icons/arrow-curve.png")
+        # reload_img = QIcon("icons/arrow-circle-225-left.png")
+        # home_img = QIcon("icons/home.png")
+
+        #
 
         # back next reload home
         bck = QAction(bck_img, 'Back', brow)
@@ -38,7 +44,7 @@ class MainPage(QMainWindow):
         task_bar.addAction(rel)
 
         # home
-        home_button = QAction(home_img,'Home', brow)
+        home_button = QAction(home_img, 'Home', brow)
         home_button.triggered.connect(brow.to_home)
         task_bar.addAction(home_button)
 
